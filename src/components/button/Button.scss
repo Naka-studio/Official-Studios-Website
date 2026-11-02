@@ -1,0 +1,105 @@
+@use "sass:map";
+
+// button.scss
+$btn-sizes: (
+  sm: (
+    padding: 0.5rem 1rem,
+    font-size: var(--smallest-font),
+  ),
+  md: (
+    padding: 1rem 1.5rem,
+    font-size: var(--smaller-font),
+  ),
+  lg: (
+    padding: 1.5rem 2rem,
+    font-size: var(--normal-font),
+  ),
+);
+
+.btn {
+  --_color: var(--btn-color, var(--primary));
+  --_hover: var(--btn-hover, var(--btn-color, var(--hover)));
+
+  display: flex;
+  width: min(250px, 60%);
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  font-weight: var(--semi-font);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--_color);
+  border-radius: 0;
+
+  transition:
+    background var(--fast-animate),
+    border-color var(--fast-animate),
+    opacity var(--fast-animate);
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:hover .btn__icon {
+    transform: translateX(3px);
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--text-color);
+    outline-offset: 2px;
+  }
+
+  // tipe
+  &--primary {
+    background: var(--_color);
+    color: var(--body-color);
+
+    &:hover {
+      background: var(--_hover);
+      border-color: var(--_hover);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--_color);
+
+    &:hover {
+      background: color-mix(in srgb, var(--_color) 12%, transparent);
+    }
+  }
+
+  &--justify-left {
+    justify-self: start;
+  }
+  &--justify-center {
+    justify-self: center;
+  }
+  &--justify-right {
+    justify-self: end;
+  }
+
+  // ukuran
+  @each $name, $props in $btn-sizes {
+    &--#{$name} {
+      padding: map.get($props, padding);
+      font-size: map.get($props, font-size);
+    }
+  }
+
+  // icon (lucide = stroke, jadi gk ada fill)
+  &__icon {
+    display: inline-flex;
+    width: 1.2em;
+    height: 1.2em;
+    order: 1;
+    transition: transform var(--fast-animate);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

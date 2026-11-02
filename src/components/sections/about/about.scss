@@ -1,0 +1,45 @@
+.about {
+  .about__content.grid {
+    gap: 0;
+
+    .about__tagline {
+      display: block;
+      position: static;
+      margin-top: 2rem;
+      transform: rotate(-4deg);
+      color: var(--primary);
+      text-shadow: var(--regular-shad);
+      font-style: italic;
+    }
+
+    .about__btn {
+      margin-top: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .about__container {
+      margin-inline: auto;
+      grid-template-columns: repeat(2, 1fr);
+
+      .about__content {
+        position: relative;
+
+        .about__subtitle {
+          margin: 0;
+        }
+
+        .about__tagline {
+          position: absolute;
+          right: 8%;
+          bottom: -80px;
+          transform: rotate(-7deg);
+        }
+
+        .about__btn {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}

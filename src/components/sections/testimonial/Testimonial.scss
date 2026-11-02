@@ -1,0 +1,40 @@
+.testimonial__cards {
+  margin: 4rem 0;
+
+  .testimonial__quote {
+    position: relative;
+    padding: 0 0 0 1.5rem;
+    margin-bottom: 4rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background: var(--primary);
+    }
+
+    .quote {
+      font-size: var(--h2-font);
+      color: var(--text-color);
+      font-family: var(--main-font);
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-weight: var(--bold-font);
+      padding-bottom: 1.5rem;
+    }
+
+    .quote__by {
+      font-size: var(--small-font);
+      letter-spacing: -0.05em;
+    }
+  }
+}
+
+.testimonial .testimonial__container {
+  @media screen and (min-width: 1024px) {
+    margin-inline: auto;
+  }
+}

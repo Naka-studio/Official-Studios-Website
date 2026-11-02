@@ -1,0 +1,118 @@
+// ==== { BASE RESET }============================================
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--root-font);
+}
+
+body,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-body);
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-weight: var(--bold-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100;
+  height: auto;
+}
+
+// ==== { REUSABLE CLASSES }============================================
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  margin: 3rem 0;
+  border-top: 0.1px solid var(--border-color);
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: var(--h1-font);
+  margin: 1rem 0 3rem 0;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.section__title span {
+  color: var(--text-alt);
+}
+
+.section__subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.section__badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  font-size: var(--smallest-font);
+  font-family: var(--main-font);
+}
+
+.badge__text {
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.badge__line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* Badge Desktop Override */
+@media screen and (min-width: 700px) {
+  .section__badge {
+    max-width: 480px;
+  }
+}
+
+.main {
+  overflow: hidden;
+}

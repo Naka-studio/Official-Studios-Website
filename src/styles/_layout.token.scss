@@ -1,0 +1,18 @@
+:root {
+  // ## -- Provide Radius Variable, Shadow and Z-index variable -- ##
+  --quad-rad: 0.25rem;
+  --small-rad: 0.5rem;
+  --regular-rad: 1rem;
+  --large-rad: 1.5rem;
+  --circle-rad: 50rem;
+
+  --z-normal: 10;
+  --z-overlay: 25;
+  --z-navbar: 50;
+  --z-tooltip: 100;
+  --z-toast: 200;
+
+  --light-shad: 0 0 4px var(--shadow);
+  --regular-shad: 0 3px 8px var(--shadow);
+  --strong-shad: 0 5px 10px var(--shadow);
+}

@@ -1,0 +1,239 @@
+.hero__section {
+  position: relative;
+  padding-top: 6rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/hero-bg.jpg") center / cover no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__container {
+    padding: 3rem 0 2rem 0;
+
+    .hero__badge {
+      padding: 5px 0;
+
+      .dot__badge {
+        width: 5px;
+        height: 5px;
+        background-color: var(--primary);
+        border-radius: var(--circle-rad);
+      }
+    }
+
+    .hero__title {
+      font-size: var(--bigger-font);
+      margin: 1.5rem 0 1rem 0;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+
+    .hero__cta {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .hero__art {
+      min-height: 280px;
+      margin-top: -5px;
+      position: relative;
+      display: grid;
+      place-items: center;
+
+      .orb {
+        width: 75vw;
+        aspect-ratio: 1;
+        position: relative;
+        display: grid;
+        place-items: center;
+        animation: float 8s ease-in-out infinite;
+
+        .orb__core {
+          width: 34%;
+          aspect-ratio: 1;
+          border-radius: var(--circle-rad);
+          background: radial-gradient(
+            circle at 35% 30%,
+            #f5f5f5,
+            #6f6f6f 42%,
+            #171717 72%
+          );
+          box-shadow: 0 0 60px
+            color-mix(in srgb, var(--primary) 30%, transparent);
+        }
+
+        .orb__ring {
+          position: absolute;
+          border: 1px solid var(--primary);
+          border-radius: var(--circle-rad);
+        }
+
+        .ring__one {
+          inset: 12%;
+          transform: rotate(30deg) scaleY(0.34);
+        }
+
+        .ring__two {
+          inset: 22%;
+          transform: rotate(-50deg) scaleY(0.3);
+          border-color: var(--text-muted);
+        }
+      }
+
+      .orbit__line {
+        position: absolute;
+        width: 115%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--secondary),
+          transparent
+        );
+        transform: rotate(-32deg);
+      }
+
+      .coord {
+        position: absolute;
+        color: var(--text-muted);
+        font: 600 0.62rem/1 var(--main-font);
+        letter-spacing: 0.12em;
+      }
+
+      .coord-a {
+        top: 13%;
+        left: 3%;
+      }
+
+      .coord-b {
+        top: 24%;
+        right: 0;
+      }
+
+      .coord-c {
+        bottom: 10%;
+        left: 7%;
+        color: var(--primary);
+      }
+    }
+  }
+
+  .scroll__note {
+    display: none;
+  }
+
+  .hero__shadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, var(--body-color));
+    z-index: 1;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(-25px);
+    }
+
+    50% {
+      transform: translateY(25px);
+    }
+  }
+
+  // large media queries ------------------
+  @media screen and (min-width: 1024px) {
+    padding: 6rem 0 3rem 0;
+
+    .hero__container {
+      margin-inline: auto;
+      padding: 6rem 0 5rem 0;
+    }
+
+    .hero__container.grid {
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+      gap: 50px;
+      align-items: center;
+
+      .hero__badge {
+        gap: 1rem;
+        font-size: var(--smaller-font);
+
+        .dot__badge {
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+      .hero__title {
+        margin: 2.5rem 0 2rem 0;
+        max-width: 1050px;
+      }
+
+      .hero__subtitle {
+        margin-bottom: 2rem;
+        max-width: 520px;
+      }
+
+      .hero__cta {
+        gap: 3rem;
+      }
+
+      .hero__art {
+        margin-top: 0;
+        min-height: 560px;
+
+        .orb {
+          width: min(34vw, 470px);
+
+          .coord-a {
+            top: 22%;
+            left: 7%;
+          }
+
+          .coord-b {
+            top: 34%;
+            right: 5%;
+          }
+
+          .coord-c {
+            bottom: 22%;
+            left: 18%;
+          }
+        }
+      }
+    }
+
+    .scroll__note {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--text-muted);
+      font-weight: var(--semi-font);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      z-index: 100;
+      padding-bottom: 5rem;
+
+      span {
+        width: 3rem;
+        height: 1px;
+        background: var(--text-muted);
+      }
+    }
+  }
+}

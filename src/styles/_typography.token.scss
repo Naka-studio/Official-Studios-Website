@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap");
+
+/*
+*  FONT HEADING = Space Grotesk
+*  FONT BODY    = Jetbrains Mono
+*/
+
+:root {
+  // ## -- Font Families -- ##
+  --main-font: "Space Grotesk", sans-serif;
+  --body-font: "JetBrains Mono", monospace;
+
+  // ## -- Font Sizing ( Using clamp to responsivities ) -- ##
+  --root-font: clamp(0.875rem, 0.8rem + 0.35vw, 1.125rem);
+
+  --biggest-font: clamp(2.5rem, 1.5rem + 5vw, 6rem);
+  --bigger-font: clamp(2rem, 1.3rem + 3.5vw, 4.5rem);
+  --h1-font: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+  --h2-font: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+  --h3-font: clamp(1.125rem, 1rem + 0.8vw, 1.5rem);
+  --normal-font: 1rem;
+  --small-font: 0.875rem;
+  --smaller-font: 0.8125rem;
+  --smallest-font: 0.75rem;
+
+  // ## -- Font Weight -- ##
+  --thin-font: 300;
+  --regular-font: 400;
+  --semi-font: 600;
+  --bold-font: 800;
+}

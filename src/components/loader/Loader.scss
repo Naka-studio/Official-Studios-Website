@@ -1,0 +1,129 @@
+.orb-wrap {
+  --ball: calc(var(--size) * 0.127);
+  --radius: calc(var(--size) * 0.227);
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+
+  .orb-label {
+    color: var(--text-body);
+    font-family: var(--main-font);
+    font-size: inherit;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+
+    .orb-dots span {
+      opacity: 0.2;
+      animation: orb-dot 1.2s infinite;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  .orb-scene {
+    width: var(--size);
+    height: var(--size);
+    flex-shrink: 0;
+    perspective: calc(var(--size) * 1.36);
+    display: grid;
+    place-items: center;
+
+    .orb-tilt {
+      width: 0;
+      height: 0;
+      transform-style: preserve-3d;
+      animation: orb-tilt 2000ms ease-in-out infinite alternate;
+
+      .orb-orbit {
+        position: relative;
+        width: 0;
+        height: 0;
+        transform-style: preserve-3d;
+
+        .orb-ball {
+          position: absolute;
+          width: var(--ball);
+          height: var(--ball);
+          margin: calc(var(--ball) / -2) 0 0 calc(var(--ball) / -2);
+          border-radius: 50%;
+          background: radial-gradient(
+            circle at 30% 30%,
+            #fff,
+            hsl(var(--hue), 100%, 52%) 40%,
+            hsl(var(--hue), 100%, 52%)
+          );
+          box-shadow: 0 0 calc(var(--ball) * 0.57)
+            hsla(var(--hue), 100%, 52%, 0.6);
+          animation:
+            orb-orbit 2s linear infinite,
+            orb-fade 2s ease-in-out infinite,
+            orb-shrink 2s ease-in-out infinite;
+          animation-delay: 0s, var(--d), var(--d);
+        }
+      }
+    }
+  }
+}
+
+@keyframes orb-orbit {
+  from {
+    transform: rotateY(var(--a)) translateZ(var(--radius))
+      rotateY(calc(var(--a) * -1));
+  }
+  to {
+    transform: rotateY(calc(var(--a) + 360deg)) translateZ(var(--radius))
+      rotateY(calc(var(--a) * -1 - 360deg));
+  }
+}
+
+@keyframes orb-fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes orb-shrink {
+  0%,
+  100% {
+    scale: 0.85;
+  }
+  50% {
+    scale: 0.7;
+  }
+}
+
+@keyframes orb-tilt {
+  0% {
+    transform: rotateX(20deg);
+  }
+  22.22% {
+    transform: rotateX(0deg);
+  }
+  77.78% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg);
+  }
+}
+
+@keyframes orb-dot {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 1;
+  }
+}

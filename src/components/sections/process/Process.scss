@@ -1,0 +1,44 @@
+.process__container {
+  .process__content {
+    .process__cards {
+      margin: 4rem 0;
+
+      .process__card {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 20px;
+        padding: 2rem 0;
+        border-top: 0.1px solid var(--border-color);
+
+        &:last-child {
+          border-bottom: 0.1px solid var(--border-color);
+        }
+
+        &-number {
+          color: var(--primary);
+          font-style: italic;
+          font-size: var(--smaller-font);
+        }
+
+        &-data {
+          &-title {
+            line-height: 1;
+            margin: 0 0 1rem;
+          }
+
+          &-desc {
+            margin: 0;
+            max-width: 560px;
+            line-height: 1.6;
+            font-size: var(--smaller-font);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-inline: auto !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

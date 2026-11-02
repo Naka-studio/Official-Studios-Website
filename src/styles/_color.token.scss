@@ -1,0 +1,27 @@
+// ==== {  COLOR SCHEMAS }============================================
+
+:root {
+  // ## -- [Brand Colors] -- ##
+  --primary: hsl(69, 100%, 45%);
+  --hover: hsl(69, 100%, 52%);
+  --secondary: hsl(69, 65%, 32%);
+  --alter: hsl(79, 85%, 40%);
+  --shadow: hsla(69, 100%, 45%, 0.5);
+
+  // ## -- [Layout Colors] -- ##
+  --body-color: hsl(225, 17%, 5%);
+  --container-color: hsl(225, 18%, 8.5%);
+  --panel-color: hsl(222, 16%, 12%);
+  --border-color: hsl(230, 12%, 20%);
+
+  // ## -- [Typography Colors] -- ##
+  --text-color: hsl(210, 40%, 98%);
+  --text-alt: hsla(210, 40%, 98%, 0.75);
+  --text-body: hsl(0 0% 60%);
+  --text-muted: hsl(0, 0%, 30%);
+
+  // ## -- [Status Colors] -- ##
+  --ok-color: hsl(160.1, 84.1%, 39.4%);
+  --warn-color: hsl(39.4, 100%, 49.6%);
+  --bad-color: hsl(4, 75%, 55%);
+}
