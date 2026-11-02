@@ -1,6 +1,5 @@
 import { MoveRight, MoveUpRight } from "lucide-react";
 import Button from "../../button/Button.jsx";
-import Loader from "../../loader/Loader.jsx";
 import "./hero.scss";
 
 const hero = () => {
@@ -50,8 +49,6 @@ const hero = () => {
           <span className="coord coord-b">NAKA U1REVRElP</span>
           <span className="coord coord-c">human-made</span>
         </div>
-
-        <Loader />
       </div>
 
       <div className="hero__shadow"></div>

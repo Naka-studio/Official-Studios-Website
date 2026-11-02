@@ -39,6 +39,10 @@
 
   @media screen and (min-width: 1024px) {
     margin-inline: auto !important;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
+
+    .process__badge {
+      max-width: 250px;
+    }
   }
 }

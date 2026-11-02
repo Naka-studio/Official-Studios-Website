@@ -65,6 +65,10 @@ img {
   margin: 3rem 0;
   border-top: 0.1px solid var(--border-color);
   padding-block: 5rem 1rem;
+
+  @media screen and (min-width: 1024px) {
+    padding-block: 6rem;
+  }
 }
 
 .section__title {
@@ -109,7 +113,7 @@ img {
 /* Badge Desktop Override */
 @media screen and (min-width: 700px) {
   .section__badge {
-    max-width: 480px;
+    max-width: 500px;
   }
 }
 

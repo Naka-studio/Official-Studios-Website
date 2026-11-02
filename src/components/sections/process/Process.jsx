@@ -7,7 +7,7 @@ const Process = () => {
   return (
     <section className="process section" id="process">
       <div className="process__container container grid">
-        <div className="section__badge">
+        <div className="process__badge section__badge">
           <h3 className="badge__text">06/easy steps</h3>
           <div className="badge__line"></div>
         </div>
