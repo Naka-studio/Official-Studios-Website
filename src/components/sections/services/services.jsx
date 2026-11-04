@@ -1,4 +1,4 @@
-import { Plus, Minus, MoveRight, LayoutTemplate } from "lucide-react";
+import { Plus, Minus, LayoutTemplate, ArrowUpRight } from "lucide-react";
 import useService from "../../../hooks/useService";
 import { useState } from "react";
 import { useRef } from "react";
@@ -84,22 +84,21 @@ const Services = () => {
                     }}
                   >
                     {item.description}
+
+                    <Button
+                      to="/pricing"
+                      size="sm"
+                      icon={<ArrowUpRight />}
+                      justify="left"
+                    >
+                      Detail
+                    </Button>
                   </div>
                 </div>
               );
             })
           )}
         </div>
-
-        <Button
-          to="/"
-          className="services__btn"
-          icon={<MoveRight />}
-          iconPosition="right"
-          justify="right"
-        >
-          Lihat Semua Layanan
-        </Button>
       </div>
     </section>
   );

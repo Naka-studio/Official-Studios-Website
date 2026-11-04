@@ -33,7 +33,7 @@ const Pricing = () => {
         </div>
 
         <Button
-          to="/"
+          to="/pricing"
           className="pricing__footer"
           variant="ghost"
           icon={<MoveRight />}

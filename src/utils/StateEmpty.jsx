@@ -1,10 +1,13 @@
+import { BookTemplateIcon } from "lucide-react";
 import "./style.scss";
 
-const StateEmpty = ({ icon, title = "> Gagal Mengambil data__" }) => {
+const StateEmpty = ({ icon, title = "", variant = "error" }) => {
+  const isError = variant === "error";
+
   return (
     <div className="content-wrapper">
-      {icon}
-      <span className="title">{title}</span>
+      {isError ? <BookTemplateIcon /> : icon}
+      <span className="title">{isError ? "Gagal memuat data" : title}</span>
     </div>
   );
 };
