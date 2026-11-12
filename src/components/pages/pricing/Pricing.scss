@@ -2,6 +2,10 @@
   padding-block-start: 4rem;
 
   .header__container {
+    @media screen and (min-width: 1024px) {
+      margin-inline: auto;
+    }
+
     .back-btn {
       padding: 10px 10px 10px 0;
       display: flex;
@@ -36,6 +40,10 @@
 
 .service__data {
   .data__container {
+    @media screen and (min-width: 124px) {
+      margin-inline: auto;
+    }
+
     .data__filter {
       display: flex;
       align-items: center;
@@ -80,6 +88,11 @@
     }
 
     .data__content {
+      @media screen and (min-width: 1024px) {
+        margin-inline: auto;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .content__card {
         display: flex;
         flex-direction: column;

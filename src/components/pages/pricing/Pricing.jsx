@@ -134,7 +134,7 @@ const Services = () => {
             })}
           </div>
 
-          <div className="data__content">{content}</div>
+          <div className="data__content grid">{content}</div>
         </div>
       </section>
     </main>

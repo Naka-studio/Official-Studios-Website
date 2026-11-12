@@ -25,7 +25,7 @@ const about = () => {
           <h3 className="about__tagline">Sense of Human !!</h3>
 
           <Button
-            to="/about"
+            to="/about/#"
             className="about__btn"
             variant="ghost"
             icon={<MoveRight />}
